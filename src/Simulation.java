@@ -4,14 +4,14 @@ import avajLauncher.vehicles.Flyable;
 import avajLauncher.weather.WeatherTower;
 
 import java.io.*;
-import java.util.*;
-import java.util.logging.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Simulation {
     private static WeatherTower weatherTower;
     private static List<Flyable> flyableList = new ArrayList<>();
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String args[]) {
         try {
                 BufferedReader reader = new BufferedReader( new FileReader(args[0]));
                 String line = reader.readLine();
@@ -27,13 +27,15 @@ public class Simulation {
                         flyableList.add(flyable);
                     }
 
+                    System.out.println(weatherTower);
+
                     for (Flyable flyable : flyableList) {
                         flyable.registerTower(weatherTower);
                     }
 
-                    for (int i = 1; i <= simulations; i++) {
-                        weatherTower.changeWeather();
-                    }
+//                    for (int i = 1; i <= simulations; i++) {
+//                        weatherTower.changeWeather();
+//                    }
                 }
         } catch (FileNotFoundException e) {
             System.out.println("Couldn't find file " + args[0]);
