@@ -2,8 +2,10 @@ package avajLauncher.weather;
 
 public class WeatherTower extends Tower {
     public String getWeather(Coordinates coordinates) {
-        return "Hello";
+        return "WTF";
     }
 
-    public void changeWeather() {}
+    public void changeWeather() {
+        conditionsChanged();
+    }
 }

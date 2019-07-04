@@ -33,16 +33,14 @@ public class Simulation {
                         flyable.registerTower(weatherTower);
                     }
 
-//                    for (int i = 1; i <= simulations; i++) {
-//                        weatherTower.changeWeather();
-//                    }
+                    for (int i = 1; i <= simulations; i++) {
+                        weatherTower.changeWeather();
+                    }
                 }
         } catch (FileNotFoundException e) {
             System.out.println("Couldn't find file " + args[0]);
         } catch (IOException e) {
             System.out.println("There was an error while reading the file " + args[0]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Specify simulation file");
         }
     }
 }
